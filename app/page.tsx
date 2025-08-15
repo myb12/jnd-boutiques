@@ -1,8 +1,6 @@
 "use client"
 
 import { useState, FormEvent } from 'react';
-import Header from './login/components/layout/Header';
-import Footer from './login/components/layout/Footer';
 import Dashboard from './dashboard/page';
 import LoginPage from './login/page';
 
@@ -22,16 +20,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans">
-      <Header />
-      <main className="flex-grow flex items-center justify-center p-4">
+    <div>
         {isLoggedIn ? (
-          <Dashboard onLogout={handleLogout} />
+          <Dashboard />
         ) : (
-          <LoginPage onLogin={handleLogin} />
+          <LoginPage  />
         )}
-      </main>
-      <Footer />
     </div>
   );
 }
