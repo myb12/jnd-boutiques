@@ -20,6 +20,7 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
+      "react/no-unescaped-entities": "off",
     },
 
   },
