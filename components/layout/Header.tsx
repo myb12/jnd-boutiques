@@ -15,6 +15,9 @@ export default function Header() {
           />
         </Link>
         <nav>
+          <Link href="/admin/dashboard" className="text-gray-600 hover:text-rose-500 transition-colors duration-300 mx-2">
+            Dashboard
+          </Link>
           <a href="#" className="text-gray-600 hover:text-rose-500 transition-colors duration-300 mx-2">
             Shop
           </a>
