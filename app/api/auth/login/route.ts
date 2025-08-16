@@ -34,8 +34,18 @@ export async function POST(request: Request) {
     );
 
     const { passwordHash, ...userWithoutPassword } = user;
+    const response = NextResponse.json({ message: 'Login successful', token, user: userWithoutPassword }, { status: 200 });
 
-    return NextResponse.json({ message: 'Login successful', token, user: userWithoutPassword }, { status: 200 });
+    // Set the token as an HTTP-only cookie
+    response.cookies.set('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+
+    return response;
 
   } catch (error) {
     console.error('Login error:', error);

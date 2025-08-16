@@ -1,52 +1,46 @@
+// store/authSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define a type for the user data
 interface User {
   id: number;
   email: string;
   name: string;
 }
 
-// Define the shape of the authentication state
 interface AuthState {
   user: User | null;
-  token: string | null;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
 }
 
-// Check for data in local storage on initial load
-const getInitialState = (): AuthState => {
-  if (typeof window !== 'undefined') {
-    const user = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    return {
-      user: user ? JSON.parse(user) : null,
-      token: token || null,
-    };
-  }
-  return { user: null, token: null };
+const initialState: AuthState = {
+  user: null,
+  status: 'idle',
 };
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: getInitialState(),
+  initialState,
   reducers: {
-    setCredentials(state, action: PayloadAction<{ user: User; token: string }>) {
+    // This action will be called after a successful login API call
+    setCredentials(state, action: PayloadAction<{ user: User }>) {
       state.user = action.payload.user;
-      state.token = action.payload.token;
-      // Store in local storage
-      localStorage.setItem('user', JSON.stringify(action.payload.user));
-      localStorage.setItem('token', action.payload.token);
+      state.status = 'succeeded';
     },
-    logOut(state) {
+    // This action will be called to clear the Redux state
+    clearCredentials(state) {
       state.user = null;
-      state.token = null;
-      // Remove from local storage
-      localStorage.removeItem('user');
-      localStorage.removeItem('token');
+      state.status = 'idle';
+    },
+    setLoading(state) {
+      state.status = 'loading';
+    },
+    setFailed(state) {
+      state.status = 'failed';
+      state.user = null;  
     },
   },
 });
 
-export const { setCredentials, logOut } = authSlice.actions;
+export const { setCredentials, clearCredentials, setLoading, setFailed } = authSlice.actions;
 
 export default authSlice.reducer;

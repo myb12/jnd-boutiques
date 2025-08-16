@@ -1,9 +1,6 @@
 "use client"
 
 import { useState, FormEvent } from 'react';
-import Dashboard from './dashboard/page';
-import LoginPage from './login/page';
-
 // Main component for the entire app. Export this as default.
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -21,11 +18,7 @@ export default function App() {
 
   return (
     <div>
-        {isLoggedIn ? (
-          <Dashboard />
-        ) : (
-          <LoginPage  />
-        )}
+      <h1>This is the hompage</h1>
     </div>
   );
 }
