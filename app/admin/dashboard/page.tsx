@@ -8,7 +8,7 @@ import apiClient from '@/lib/axios';
 
 export default function Dashboard() {
   const dispatch = useDispatch();
-  const { user, status } = useSelector((state: RootState) => state.auth);
+  const { user } = useSelector((state: RootState) => state.auth);
 
   const handleLogout = async() => {
       try {
@@ -21,56 +21,41 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="text-center p-8 bg-white rounded-lg shadow-xl md:min-w-[525px]">
-      {
-          status !== 'succeeded' ? <div className="mx-auto w-full max-w-sm rounded-md p-4">
-                  <div className="flex animate-pulse space-x-4">
-                    <div className="size-10 rounded-full bg-gray-200"></div>
-                    <div className="flex-1 space-y-6 py-1">
-                      <div className="h-2 rounded bg-gray-200"></div>
-                      <div className="space-y-3">
-                        <div className="grid grid-cols-3 gap-4">
-                          <div className="col-span-2 h-2 rounded bg-gray-200"></div>
-                          <div className="col-span-1 h-2 rounded bg-gray-200"></div>
-                        </div>
-                        <div className="h-2 rounded bg-gray-200"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>:  user ? (
-                  <>
-                    <h2 className="text-2xl font-light text-gray-700 mb-4">
-                      Welcome, {user.name}!
-                    </h2>
-                    <p className="text-gray-600 mb-2">
-                      Email: {user.email}
-                    </p>
-                    <p className="text-gray-600 mb-6">
-                      You are successfully logged in. This is your personal dashboard.
-                    </p>
+    <div className="text-center p-8 bg-white rounded-lg shadow-xl">
+      {user ? (
+        <>
+          <h2 className="text-2xl font-light text-gray-700 mb-4">
+            Welcome, {user.name}!
+          </h2>
+          <p className="text-gray-600 mb-2">
+            Email: {user.email}
+          </p>
+          <p className="text-gray-600 mb-6">
+            You are successfully logged in. This is your personal dashboard.
+          </p>
 
-                    <button
-                      onClick={handleLogout}
-                      className="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors duration-300"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <div>
-                    <h2 className="text-2xl font-light text-gray-700 mb-4">
-                      You are not logged in.
-                    </h2>
-                    <Link
-                      href="/admin/login"
-                      className="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors duration-300"
-                    >
-                      Login
-                    </Link>
+          <button
+            onClick={handleLogout}
+            className="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors duration-300"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <div>
+          <h2 className="text-2xl font-light text-gray-700 mb-4">
+            You are not logged in.
+          </h2>
+          <Link
+            href="/admin/login"
+            className="bg-gray-200 text-gray-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors duration-300"
+          >
+            Login
+          </Link>
 
-                    
-                  </div>)
-      }
+          
+        </div>
+      )}
 
     </div>
   );

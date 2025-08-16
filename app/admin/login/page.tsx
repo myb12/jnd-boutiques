@@ -27,10 +27,10 @@ export default function LoginPage() {
         password,
       });
 
-      const { user, token } = response.data;
+      const { user } = response.data;
 
       // Dispatch the action to save user and token to the Redux store
-      dispatch(setCredentials({ user, token }));
+      dispatch(setCredentials({ user }));
 
       // Redirect to the dashboard
       router.push('/admin/dashboard');
