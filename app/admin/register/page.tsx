@@ -92,7 +92,7 @@ export default function RegistrationPage() {
         </button>
       </form>
       <div className="mt-6 text-center text-sm text-gray-500">
-        Already have an account? <Link href="/login" className="text-rose-500 hover:underline">Login</Link>
+        Already have an account? <Link href="/admin/login" className="text-rose-500 hover:underline">Login</Link>
       </div>
     </div>
   );

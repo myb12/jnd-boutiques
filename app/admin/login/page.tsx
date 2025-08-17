@@ -6,6 +6,7 @@ import apiClient from '../../../lib/axios';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import { setCredentials } from '@/store/authSlice';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState<string>('');
@@ -98,7 +99,7 @@ export default function LoginPage() {
         </button>
       </form>
       <div className="mt-6 text-center text-sm text-gray-500">
-        Don't have an account? <a href="/admin/register" className="text-rose-500 hover:underline">Sign up</a>
+        Don't have an account? <Link href="/admin/register" className="text-rose-500 hover:underline">Sign up</Link>
       </div>
     </div>
   );

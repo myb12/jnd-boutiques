@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.navbarTogglerActive > span:nth-child(1) {
+  top: 7px;
+  rotate: 45deg;
+}
+.navbarTogglerActive > span:nth-child(2) {
+  opacity: 0%;
+}
+.navbarTogglerActive > span:nth-child(3) {
+  top: calc(var(--spacing) * -2);
+  rotate: 135deg;
+}
