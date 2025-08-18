@@ -3,7 +3,7 @@
 import { Provider } from "react-redux";
 import React, { useEffect } from "react";
 import { store } from "@/store";
-import { setCredentials, setFailed, setLoading } from "@/store/authSlice";
+import { setCredentials, setFailed, setLoading } from "@/store/auth/authSlice";
 import apiClient from "@/lib/axios";
 
 function AppInitializer({ children }: { children: React.ReactNode }) {
@@ -25,7 +25,7 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function ReduxProvider({ children }: { children: React.ReactNode }) {
   return <Provider store={store}>
     <AppInitializer>{children}</AppInitializer>
   </Provider>;

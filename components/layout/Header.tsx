@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { RootState } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import apiClient from '@/lib/axios';
-import { clearCredentials } from '@/store/authSlice';
+import { clearCredentials } from '@/store/auth/authSlice';
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -54,7 +54,7 @@ const Header = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
+                className={`z-2 absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none ${
                   !navbarOpen ? 'hidden' : ''
                 }`}
               >

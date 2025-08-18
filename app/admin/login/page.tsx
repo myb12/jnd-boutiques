@@ -5,7 +5,7 @@ import axios from 'axios';
 import apiClient from '../../../lib/axios';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
-import { setCredentials } from '@/store/authSlice';
+import { setCredentials } from '@/store/auth/authSlice';
 import Link from 'next/link';
 
 export default function LoginPage() {

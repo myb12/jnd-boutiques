@@ -13,31 +13,25 @@ const initialState = {
     price: 0,
     discountedPrice: 0,
     img: "",
-    id: 0,
     images: [],
+    id: 0,
     imgs: { thumbnails: [], previews: [] },
-  } as ProductType,
+  },
 } as InitialState;
 
-export const quickView = createSlice({
-  name: "quickView",
+export const productDetails = createSlice({
+  name: "productDetails",
   initialState,
   reducers: {
-    updateQuickView: (_, action) => {
+    updateproductDetails: (_, action) => {
       return {
         value: {
           ...action.payload,
         },
       };
     },
-
-    resetQuickView: () => {
-      return {
-        value: initialState.value,
-      };
-    },
   },
 });
 
-export const { updateQuickView, resetQuickView } = quickView.actions;
-export default quickView.reducer;
+export const { updateproductDetails } = productDetails.actions;
+export default productDetails.reducer;

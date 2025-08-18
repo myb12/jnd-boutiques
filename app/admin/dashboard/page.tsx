@@ -1,7 +1,7 @@
 "use client"
 
 import { useDispatch, useSelector } from 'react-redux';
-import { clearCredentials } from '@/store/authSlice';
+import { clearCredentials } from '@/store/auth/authSlice';
 import { RootState } from '@/store'; // Import the RootState type
 import Link from 'next/link';
 import apiClient from '@/lib/axios';

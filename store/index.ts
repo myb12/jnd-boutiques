@@ -1,12 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './authSlice';
-import quickViewReducer from "./features/quickView-slice";
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
+
+import authReducer from './auth/authSlice';
+import quickViewReducer from "./features/quickView-slice";
+import cartReducer from "./features/cart-slice";
+import wishlistReducer from "./features/wishlist-slice";
+import productDetailsReducer from "./features/product-details";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     quickViewReducer,
+    cartReducer,
+    wishlistReducer,
+    productDetailsReducer,
   },
 });
 

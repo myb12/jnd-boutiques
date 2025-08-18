@@ -1,15 +1,15 @@
 
 import type { Metadata } from "next";
-
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
+import { ReduxProvider } from "@/store/Providers";
+import { ModalProvider } from "@/context/QuickViewModalContext";
+import QuickViewModal from "@/components/Common/QuickViewModal";
 
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 
-import { Providers } from "../components/Providers";
-import { ModalProvider } from "@/context/QuickViewModalContext";
-import QuickViewModal from "@/components/Common/QuickViewModal";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,15 +36,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans">
-            <Providers>
+          <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans ">
+            <ReduxProvider>
               <ModalProvider>
                 <Header/>
                 {children}
                 <QuickViewModal />
                 <Footer />
               </ModalProvider>
-            </Providers>
+            </ReduxProvider>
           </div>
       </body>
     </html>
