@@ -37,12 +37,17 @@
   --color-orange-dark: #e1580e;
   --spacing: .25rem;
   --ease-out: cubic-bezier(0,0,.2,1);
+  --blur-sm: 8px;
   --tw-border-style {
     syntax: "*";
     inherits: false;
     initial-value: solid;
   };
 
+}
+
+button {
+  cursor: pointer;
 }
 
 @theme inline {
@@ -130,3 +135,259 @@ body {
     width: auto;
     height: auto
 }
+
+   .bg-blue {
+        background-color: var(--color-blue)
+    }
+
+    .bg-blue-light {
+        background-color: var(--color-blue-light)
+    }
+
+    .bg-dark {
+        background-color: var(--color-dark)
+    }
+
+    .bg-dark-2 {
+        background-color: var(--color-dark-2)
+    } 
+
+    .bg-gray-1 {
+        background-color: var(--color-gray-1)
+    }
+
+    .bg-gray-2 {
+        background-color: var(--color-gray-2)
+    }
+
+    .bg-gray-3 {
+        background-color: var(--color-gray-3)
+    }
+
+    .bg-gray-4 {
+        background-color: var(--color-gray-4)
+    }
+
+    .bg-green {
+        background-color: var(--color-green)
+    }
+
+    .bg-green-light-6 {
+        background-color: var(--color-green-light-6)
+    }
+
+    .bg-meta {
+        background-color: var(--color-meta)
+    }
+
+    .bg-orange {
+        background-color: var(--color-orange)
+    }
+
+    .bg-red {
+        background-color: var(--color-red)
+    }
+
+    .bg-red-light-6 {
+        background-color: var(--color-red-light-6)
+    }
+
+    .bg-teal {
+        background-color: var(--color-teal)
+    }
+
+    .bg-transparent {
+        background-color: #0000
+    }
+
+    .bg-white {
+        background-color: var(--color-white)
+    }
+
+    .bg-yellow-light-4 {
+        background-color: var(--color-yellow-light-4)
+    }
+
+
+        @media (hover: hover) {
+        .hover\:border-2:hover {
+            border-style:var(--tw-border-style);
+            border-width: 2px
+        }
+
+        .hover\:border-blue:hover {
+            border-color: var(--color-blue)
+        }
+
+        .hover\:border-red-light-4:hover {
+            border-color: var(--color-red-light-4)
+        }
+
+        .hover\:border-transparent:hover {
+            border-color: #0000
+        }
+
+        .hover\:bg-\[\#E1E8FF\]:hover {
+            background-color: #e1e8ff
+        }
+
+        .hover\:bg-blue:hover {
+            background-color: var(--color-blue)
+        }
+
+        .hover\:bg-blue-dark:hover {
+            background-color: var(--color-blue-dark)
+        }
+
+        .hover\:bg-blue\/10:hover {
+            background-color: color-mix(in oklab,var(--color-blue)10%,transparent)
+        }
+
+        .hover\:bg-dark:hover {
+            background-color: var(--color-dark)
+        }
+
+        .hover\:bg-dark-2:hover {
+            background-color: var(--color-dark-2)
+        }
+
+        .hover\:bg-gray-1:hover {
+            background-color: var(--color-gray-1)
+        }
+
+        .hover\:bg-gray-1\/50:hover {
+            background-color: color-mix(in oklab,var(--color-gray-1)50%,transparent)
+        }
+
+        .hover\:bg-gray-2:hover {
+            background-color: var(--color-gray-2)
+        }
+
+        .hover\:bg-gray-3:hover {
+            background-color: var(--color-gray-3)
+        }
+
+        .hover\:bg-orange-dark:hover {
+            background-color: var(--color-orange-dark)
+        }
+
+        .hover\:bg-red-light-6:hover {
+            background-color: var(--color-red-light-6)
+        }
+
+        .hover\:bg-teal-dark:hover {
+            background-color: var(--color-teal-dark)
+        }
+
+        .hover\:bg-\[length\:100\%_3px\]:hover {
+            background-size: 100% 3px
+        }
+
+        .hover\:text-blue:hover {
+            color: var(--color-blue)
+        }
+
+        .hover\:text-dark:hover {
+            color: var(--color-dark)
+        }
+
+        .hover\:text-dark-5:hover {
+            color: var(--color-dark-5)
+        }
+
+        .hover\:text-meta-5:hover {
+            color: var(--color-meta-5)
+        }
+
+        .hover\:text-red:hover {
+            color: var(--color-red)
+        }
+
+        .hover\:text-white:hover {
+            color: var(--color-white)
+        }
+
+        .hover\:underline:hover {
+            text-decoration-line: underline
+        }
+
+        .hover\:shadow-md:hover {
+            --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color,#0000001a),0 2px 4px -2px var(--tw-shadow-color,#0000001a)
+        }
+
+        .hover\:shadow-md:hover,.hover\:shadow-none:hover {
+            box-shadow: var(--tw-inset-shadow),var(--tw-inset-ring-shadow),var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow)
+        }
+
+        .hover\:shadow-none:hover {
+            --tw-shadow: 0 0 #0000
+        }
+
+        .peer-checked\:hover\:bg-blue:is(:where(.peer):checked~*):hover {
+            background-color: var(--color-blue)
+        }
+
+        .hover\:before\:w-full:hover:before {
+            content: var(--tw-content);
+            width: 100%
+        }
+    }
+
+
+@property --tw-backdrop-brightness {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-contrast {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-grayscale {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-hue-rotate {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-invert {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-opacity {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-saturate {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-backdrop-sepia {
+    syntax: "*";
+    inherits: false
+}
+
+@property --tw-content {
+    syntax: "*";
+    inherits: false;
+    initial-value: ""
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(var(--blur-sm));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,)
+  }

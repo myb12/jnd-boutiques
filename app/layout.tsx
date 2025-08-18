@@ -8,6 +8,8 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 
 import { Providers } from "../components/Providers";
+import { ModalProvider } from "@/context/QuickViewModalContext";
+import QuickViewModal from "@/components/Common/QuickViewModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,13 +36,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <Providers>
           <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans">
-            <Header/>
-            {children}
-            <Footer />
+            <Providers>
+              <ModalProvider>
+                <Header/>
+                {children}
+                <QuickViewModal />
+                <Footer />
+              </ModalProvider>
+            </Providers>
           </div>
-        </Providers>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import Categories from '@/components/Home/Categories';
 import Hero from '@/components/Home/Hero';
+import NewArrival from '@/components/Home/NewArrivals';
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
     <main>
       <Hero/>
       <Categories/>
+      <NewArrival />
     </main>
   );
 }
