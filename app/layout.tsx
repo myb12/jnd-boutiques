@@ -37,9 +37,7 @@ export default function RootLayout({
          <Providers>
           <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans">
             <Header/>
-            <main className="flex-grow flex items-center justify-center p-4">
-              {children}
-            </main>
+            {children}
             <Footer />
           </div>
         </Providers>

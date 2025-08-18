@@ -3,6 +3,39 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-white: #fff;
+  --color-body: #6c6f93;
+  --color-meta-4: #8d93a5;
+  --color-meta-5: #bbbec9;
+  --color-meta: #f7f9fc;
+  --color-dark-2: #495270;
+  --color-dark-3: #606882;
+  --color-dark-4: #8d93a5;
+  --color-dark-5: #bbbec9;
+  --color-dark: #1c274c;
+  --color-gray-1: #f9fafb;
+  --color-gray-2: #f3f4f6;
+  --color-gray-3: #e5e7eb;
+  --color-gray-4: #d1d5db;
+  --color-gray-5: #9ca3af;
+  --color-gray-6: #6b7280;
+  --color-gray-7: #374151;
+  --color-blue: #3c50e0;
+  --color-blue-dark: #1c3fb7;
+  --color-blue-light: #5475e5;
+  --color-blue-light-4: #c3cef6;
+  --color-red: #f23030;
+  --color-red-light-4: #fdd8d8;
+  --color-red-light-6: #fef3f3;
+  --color-green: #22ad5c;
+  --color-green-light-6: #daf8e6;
+  --color-yellow: #fbbf24;
+  --color-yellow-light-4: #fffbeb;
+  --color-teal: #02aaa4;
+  --color-teal-dark: #06a09b;
+  --color-orange: #f27430;
+  --color-orange-dark: #e1580e;
+  --spacing: .25rem;
 }
 
 @theme inline {
@@ -36,4 +69,23 @@ body {
 .navbarTogglerActive > span:nth-child(3) {
   top: calc(var(--spacing) * -2);
   rotate: 135deg;
+}
+
+.hero-carousel .swiper-pagination-bullet {
+    height: calc(var(--spacing)*1);
+    width: calc(var(--spacing)*4);
+    background-color: var(--color-dark-5);
+    opacity: 1;
+    border-radius: 11px
+}
+
+.hero-carousel .swiper-pagination-bullet-active {
+    width: calc(var(--spacing)*5.5);
+    background-color: #3c50e0
+}
+
+@media (width>=1280px) {
+    .hero-carousel .swiper-pagination {
+        bottom: calc(var(--spacing)*5)!important
+    }
 }

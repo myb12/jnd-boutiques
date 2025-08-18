@@ -1,5 +1,6 @@
 "use client"
 
+import Hero from '@/components/Home/Hero';
 import { useState, FormEvent } from 'react';
 // Main component for the entire app. Export this as default.
 export default function App() {
@@ -17,8 +18,8 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h1>This is the hompage</h1>
-    </div>
+    <main>
+      <Hero/>
+    </main>
   );
 }
