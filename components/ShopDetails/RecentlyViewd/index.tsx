@@ -78,6 +78,16 @@ const RecentlyViewdItems = () => {
           <Swiper
             onSwiper={(swiper) => (sliderRef.current = swiper)}
             slidesPerView={4}
+            breakpoints={{
+              // when window width is >= 640px
+              0: {
+                slidesPerView: 1,
+              },
+              1000: {
+                slidesPerView: 4,
+                // spaceBetween: 4,
+              },
+            }}
             spaceBetween={20}
             className="justify-between"
           >

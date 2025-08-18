@@ -4,12 +4,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { ReduxProvider } from "@/store/Providers";
 import { ModalProvider } from "@/context/QuickViewModalContext";
-import QuickViewModal from "@/components/Common/QuickViewModal";
+import { CartModalProvider } from "@/context/CartSidebarModalContext";
 
+import QuickViewModal from "@/components/Common/QuickViewModal";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 
 import "./globals.css";
+import CartSidebarModal from "@/components/Common/CartSidebarModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,14 +38,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans ">
+          <div className="min-h-screen flex flex-col text-gray-800 font-sans ">
             <ReduxProvider>
-              <ModalProvider>
-                <Header/>
-                {children}
-                <QuickViewModal />
-                <Footer />
-              </ModalProvider>
+              <CartModalProvider>
+                <ModalProvider>
+                  <Header/>
+                  {children}
+                  <QuickViewModal />
+                  <CartSidebarModal />
+                  <Footer />
+                </ModalProvider>
+              </CartModalProvider>
             </ReduxProvider>
           </div>
       </body>

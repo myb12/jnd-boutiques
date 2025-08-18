@@ -21,7 +21,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="text-center p-8 bg-white rounded-lg shadow-xl">
+    <div className="text-center p-8 rounded-lg shadow-xl bg-[#F6F7FB] ">
       {user ? (
         <>
           <h2 className="text-2xl font-light text-gray-700 mb-4">

@@ -5,7 +5,7 @@ import shopData from "@/components/Shop/shopData";
 
 const NewArrival = () => {
   return (
-    <section className="overflow-hidden pt-15">
+    <section className="overflow-hidden pb-10 lg:pb-12.5 xl:pb-15">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
         {/* <!-- section title --> */}
         <div className="mb-7 flex items-center justify-between">

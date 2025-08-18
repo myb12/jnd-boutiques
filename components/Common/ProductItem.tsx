@@ -9,9 +9,11 @@ import { updateQuickView } from "@/store/features/quickView-slice";
 import { AppDispatch } from "@/store";
 import { addItemToCart } from "@/store/features/cart-slice";
 import { addItemToWishlist } from "@/store/features/wishlist-slice";
+import { useCartModalContext } from "@/context/CartSidebarModalContext";
 
 const ProductItem = ({ item }: { item: ProductType }) => {
   const { openModal } = useModalContext();
+  const { openCartModal } = useCartModalContext();
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -28,6 +30,7 @@ const ProductItem = ({ item }: { item: ProductType }) => {
         quantity: 1,
       })
     );
+    openCartModal()
   };
 
   const handleItemToWishList = () => {

@@ -56,7 +56,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="w-full md:min-w-[450px] max-w-md bg-white p-8 rounded-lg shadow-xl border border-gray-100">
+    <div className="w-full md:min-w-[450px] max-w-md p-8 rounded-lg shadow-xl border border-gray-100 bg-[#F6F7FB] ">
       <h2 className="text-3xl font-light text-center text-gray-700 mb-6">Welcome back!</h2>
       <form onSubmit={handleSubmit}>
         {error && (

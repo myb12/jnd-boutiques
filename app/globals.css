@@ -209,6 +209,11 @@ body {
     }
 
 
+    .bg-dark\/70 {
+        background-color: color-mix(in oklab,var(--color-dark)70%,transparent)
+    }
+
+
         @media (hover: hover) {
         .hover\:border-2:hover {
             border-style:var(--tw-border-style);

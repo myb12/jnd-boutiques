@@ -58,7 +58,17 @@ const Header = () => {
                   !navbarOpen ? 'hidden' : ''
                 }`}
               >
-                <ul className="block lg:flex">
+                <ul className="block lg:flex" onClick={() => setNavbarOpen(!navbarOpen)}>
+                  {
+                    user?.role === 'ADMIN' && <li className="sm:hidden">
+                    <Link
+                      href="/admin/dashboard"
+                      className="flex py-2 text-base font-medium text-body-color lg:ml-12 lg:inline-flex"
+                    >
+                      Dashboard
+                    </Link>
+                  </li>
+                  }
                   <li>
                     <Link
                       href="/"
@@ -83,6 +93,17 @@ const Header = () => {
                       Features
                     </Link>
                   </li>
+                  {
+                    user?.role === "ADMIN" && <li className="sm:hidden">
+                        <button
+                            className="py-2 text-base font-medium text-body-color"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                     </li>
+
+                  }
                 </ul>
               </nav>
             </div>
