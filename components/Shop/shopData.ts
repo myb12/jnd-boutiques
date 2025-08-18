@@ -40,7 +40,7 @@ const shopData: ProductType[] = [
   },
   {
     title: "Apple iMac M1 24-inch 2021",
-    slig: "apple-i-mac-m1-24-inch-2021",
+    slug: "apple-i-mac-m1-24-inch-2021",
     reviews: 5,
     price: 59.0,
     discountedPrice: 29.0,
