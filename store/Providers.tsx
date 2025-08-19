@@ -1,10 +1,12 @@
 "use client";
 
-import { Provider } from "react-redux";
 import React, { useEffect } from "react";
-import { store } from "@/store";
-import { setCredentials, setFailed, setLoading } from "@/store/auth/authSlice";
 import apiClient from "@/lib/axios";
+import { Provider } from "react-redux";
+
+import { persistor, store } from "@/store";
+import { setCredentials, setFailed, setLoading } from "@/store/auth/authSlice";
+import { PersistGate } from "redux-persist/integration/react";
 
 function AppInitializer({ children }: { children: React.ReactNode }) {
   const dispatch = store.dispatch;
@@ -27,6 +29,8 @@ function AppInitializer({ children }: { children: React.ReactNode }) {
 
 export function ReduxProvider({ children }: { children: React.ReactNode }) {
   return <Provider store={store}>
-    <AppInitializer>{children}</AppInitializer>
+    <PersistGate loading={null} persistor={persistor}>
+      <AppInitializer>{children}</AppInitializer>
+    </PersistGate>
   </Provider>;
 }
