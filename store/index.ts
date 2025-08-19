@@ -14,14 +14,15 @@ const persistConfig = {
   storage,
 }
 
-const persistedCartReducer = persistReducer(persistConfig, cartReducer)
+const persistedCartReducer = persistReducer(persistConfig, cartReducer);
+const persistedWishlistReducer = persistReducer(persistConfig, wishlistReducer);
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     quickViewReducer,
     cartReducer: persistedCartReducer,
-    wishlistReducer,
+    wishlistReducer: persistedWishlistReducer,
     productDetailsReducer,
   },
 });

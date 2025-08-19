@@ -9,14 +9,16 @@ const Dropdown = ({ menuItem, stickyMenu }: {menuItem: Menu, stickyMenu: boolean
 
   return (
     <li
-      onClick={() => setDropdownToggler(!dropdownToggler)}
+      onClick={() => {
+        console.log("aaaaaaaaaaaaaaaaaaaa")
+        setDropdownToggler(!dropdownToggler)
+      }}
       className={`group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-[-4px] before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full ${
         pathUrl.includes(menuItem.title) && "before:!w-full"
       }`}
     >
-      <a
-        href="#"
-        className={`hover:text-blue text-custom-sm font-medium text-dark flex items-center gap-1.5 capitalize ${
+      <div
+        className={`cursor-pointer hover:text-blue text-custom-sm font-medium text-dark flex items-center gap-1.5 capitalize ${
           stickyMenu ? "xl:py-2" : "xl:py-3"
         } ${pathUrl.includes(menuItem.title) && "!text-blue"}`}
       >
@@ -36,11 +38,11 @@ const Dropdown = ({ menuItem, stickyMenu }: {menuItem: Menu, stickyMenu: boolean
             fill=""
           />
         </svg>
-      </a>
+      </div>
 
       {/* <!-- Dropdown Start --> */}
       <ul
-        className={`dropdown ${dropdownToggler && "flex"} ${
+        className={`dropdown ${dropdownToggler ? "flex" : "hidden"} ${
           stickyMenu
             ? "xl:group-hover:translate-y-0"
             : "xl:group-hover:translate-y-0"

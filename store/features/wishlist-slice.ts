@@ -1,20 +1,8 @@
+import { WishListItem } from "@/types/wishlist";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type InitialState = {
   items: WishListItem[];
-};
-
-type WishListItem = {
-  id: number;
-  title: string;
-  price: number;
-  discountedPrice: number;
-  quantity: number;
-  status?: string;
-  imgs?: {
-    thumbnails: string[];
-    previews: string[];
-  };
 };
 
 const initialState: InitialState = {
