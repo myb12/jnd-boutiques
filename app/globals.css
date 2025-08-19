@@ -13,6 +13,7 @@
   --color-dark-4: #8d93a5;
   --color-dark-5: #bbbec9;
   --color-dark: #1c274c;
+  --color-darker: #121b36;
   --color-gray-1: #f9fafb;
   --color-gray-2: #f3f4f6;
   --color-gray-3: #e5e7eb;
@@ -265,6 +266,10 @@ body {
 
         .hover\:bg-dark:hover {
             background-color: var(--color-dark)
+        }
+
+        .hover\:bg-darker:hover {
+            background-color: var(--color-darker)
         }
 
         .hover\:bg-dark-2:hover {

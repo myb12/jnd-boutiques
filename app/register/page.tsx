@@ -2,8 +2,8 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import Link from 'next/link';
-import apiClient from '../../../lib/axios';
 import axios from 'axios';
+import apiClient from '@/lib/axios';
 
 export default function RegistrationPage() {
   const [name, setName] = useState<string>('');
@@ -40,7 +40,7 @@ export default function RegistrationPage() {
 
 
   return (
-    <div className="w-full md:min-w-[450px] max-w-md p-8 rounded-lg shadow-xl border border-gray-100 bg-[#F6F7FB]">
+    <div className="w-full md:min-w-[450px] max-w-md p-8 rounded-lg shadow-xl border border-gray-100 bg-[#F6F7FB] mt-32.5 sm:mt-40 lg:mt-20 xl:mt-45 mx-auto">
       <h2 className="text-3xl font-light text-center text-gray-700 mb-6">Create an account</h2>
       <form onSubmit={handleRegister}>
         {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
@@ -85,14 +85,14 @@ export default function RegistrationPage() {
         </div>
         <button
           type="submit"
-          className="w-full bg-rose-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all duration-300 disabled:opacity-50"
+          className="font-medium text-white bg-blue py-3 px-10.5 rounded-md ease-out duration-200 hover:bg-blue-dark w-full text-center"
           disabled={loading}
         >
           {loading ? 'Registering...' : 'Register'}
         </button>
       </form>
       <div className="mt-6 text-center text-sm text-gray-500">
-        Already have an account? <Link href="/admin/login" className="text-rose-500 hover:underline">Login</Link>
+        Already have an account? <Link href="/login" className="text-[var(--color-blue)] hover:underline">Login</Link>
       </div>
     </div>
   );

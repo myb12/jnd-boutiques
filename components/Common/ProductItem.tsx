@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { useModalContext } from "@/context/QuickViewModalContext";
 import { updateQuickView } from "@/store/features/quickView-slice";
-import { AppDispatch } from "@/store";
+import { AppDispatch, useAppSelector } from "@/store";
 import { addItemToCart } from "@/store/features/cart-slice";
 import { addItemToWishlist } from "@/store/features/wishlist-slice";
 import { useCartModalContext } from "@/context/CartSidebarModalContext";
@@ -14,6 +14,11 @@ import { useCartModalContext } from "@/context/CartSidebarModalContext";
 const ProductItem = ({ item }: { item: ProductType }) => {
   const { openModal } = useModalContext();
   const { openCartModal } = useCartModalContext();
+  const  { items: cartItems}  = useAppSelector(state => state.cartReducer);
+
+  const isInCart = cartItems.some(each => each.id === item.id);
+
+  console.log("===========isInCart",isInCart)
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -82,13 +87,18 @@ const ProductItem = ({ item }: { item: ProductType }) => {
               />
             </svg>
           </button>
-
-          <button
+          
+          {
+            isInCart ? <Link href="/checkout" className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] text-white ease-out duration-200 bg-dark hover:bg-darker">
+            Checkout
+          </Link> : <button
             onClick={() => handleAddToCart()}
-            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-blue text-white ease-out duration-200 hover:bg-blue-dark"
+            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] text-white ease-out duration-200 bg-blue hover:bg-blue-dark"
           >
             Add to cart
           </button>
+          }
+
 
           <button
             onClick={() => handleItemToWishList()}
