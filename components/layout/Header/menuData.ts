@@ -4,7 +4,7 @@ import { Menu } from "@/types/menu";
 export const menuData: Menu[] = [
   {
     id: 1,
-    title: "Popular",
+    title: "Home",
     newTab: false,
     path: "/",
   },
@@ -12,7 +12,7 @@ export const menuData: Menu[] = [
     id: 2,
     title: "Shop",
     newTab: false,
-    path: "/shop-with-sidebar",
+    path: "/shop",
   },
   {
     id: 3,

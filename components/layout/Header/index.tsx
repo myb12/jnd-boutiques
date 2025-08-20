@@ -22,7 +22,8 @@ const Header = () => {
   const [stickyMenu, setStickyMenu] = useState<boolean>(false);
   const { openCartModal } = useCartModalContext();
 
-  const product = useAppSelector((state) => state.cartReducer.items);
+  const {items: cartItems} = useAppSelector((state) => state.cartReducer);
+  const {items: wishlistItems} = useAppSelector((state) => state.wishlistReducer);
   const totalPrice = useSelector(selectTotalPrice);
   const { user } = useSelector((state: RootState) => state.auth);
 
@@ -187,7 +188,7 @@ const Header = () => {
                     </svg>
 
                     <span className="flex items-center justify-center font-medium text-2xs absolute -right-2 -top-2.5 bg-blue w-4.5 h-4.5 rounded-full text-white">
-                      {product.length}
+                      {wishlistItems.length}
                     </span>
                   </span>
 
@@ -236,7 +237,7 @@ const Header = () => {
                     </svg>
 
                     <span className="flex items-center justify-center font-medium text-2xs absolute -right-2 -top-2.5 bg-blue w-4.5 h-4.5 rounded-full text-white">
-                      {product.length}
+                      {cartItems.length}
                     </span>
                   </span>
 
